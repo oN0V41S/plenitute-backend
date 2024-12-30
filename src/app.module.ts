@@ -13,7 +13,6 @@ import { UserModule } from './user/user.module';
         options: { port: 3001 }
       },
     ]),
-    CoModule,
     UserModule
   ],
   controllers: [AppController],
