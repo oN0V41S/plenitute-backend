@@ -7,9 +7,10 @@ import { EventPattern, MessagePattern } from '@nestjs/microservices';
 export class UserController {
   constructor(private readonly userService: UserService) { }
 
+  // Comunicação via mensagem com API Principal
   @MessagePattern('login_authenticate')
   async login(createUserRequest: CreateUserRequest): Promise<{token: string}> {
-    const response = await this.userService.login(createUserRequest);
-    return response;
+    const token = await this.userService.login(createUserRequest);
+    return token;
   }
 }

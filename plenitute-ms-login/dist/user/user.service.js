@@ -18,11 +18,11 @@ const microservices_1 = require("@nestjs/microservices");
 let UserService = class UserService {
     constructor(backEndClient) {
         this.backEndClient = backEndClient;
-        this.users = [];
     }
     async login(createUserRequest) {
         console.log('User_Log - ', createUserRequest);
-        return createUserRequest;
+        const token = 'generated_token';
+        return { token };
     }
 };
 exports.UserService = UserService;

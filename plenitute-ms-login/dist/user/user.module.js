@@ -21,6 +21,9 @@ exports.UserModule = UserModule = __decorate([
                 {
                     name: "backend",
                     transport: microservices_1.Transport.TCP,
+                    options: {
+                        port: 3000,
+                    },
                 },
             ])
         ],

@@ -8,4 +8,4 @@ class UserResponseEvent {
     }
 }
 exports.UserResponseEvent = UserResponseEvent;
-//# sourceMappingURL=user-response.envent.js.map
+//# sourceMappingURL=user-response.event.js.map

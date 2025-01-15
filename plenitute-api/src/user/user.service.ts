@@ -4,7 +4,7 @@ import { ClientProxy } from '@nestjs/microservices';
 
 @Injectable()
 export class UserService {
-  constructor(@Inject('login') private readonly loginClient: ClientProxy) {}
+  constructor(@Inject('MS-LOGIN') private readonly loginClient: ClientProxy) {}
 
   getHello() {
     return 'Welcome to /login Endpoint: you cant POST here.';

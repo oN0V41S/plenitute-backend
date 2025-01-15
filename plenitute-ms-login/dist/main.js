@@ -8,11 +8,11 @@ async function bootstrap() {
     app.connectMicroservice({
         transport: microservices_1.Transport.TCP,
         options: {
-            port: 3001,
+            port: 3000,
         },
     });
     await app.startAllMicroservices();
-    await app.listen(3001);
+    await app.init();
 }
 bootstrap();
 //# sourceMappingURL=main.js.map

@@ -7,7 +7,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
   imports: [
     ClientsModule.register([
       {
-        name: "login",
+        name: "MS-LOGIN",
         transport: Transport.TCP,
       },
     ])

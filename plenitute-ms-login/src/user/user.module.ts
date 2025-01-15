@@ -9,6 +9,9 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
       {
         name: "backend",
         transport: Transport.TCP,
+        options: {
+          port: 3000,
+        },
       },
     ])
   ],

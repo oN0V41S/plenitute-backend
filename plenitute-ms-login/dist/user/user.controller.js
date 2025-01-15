@@ -19,8 +19,8 @@ let UserController = class UserController {
         this.userService = userService;
     }
     async login(createUserRequest) {
-        const response = await this.userService.login(createUserRequest);
-        return response;
+        const token = await this.userService.login(createUserRequest);
+        return token;
     }
 };
 exports.UserController = UserController;
