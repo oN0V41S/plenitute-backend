@@ -15,12 +15,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserService = void 0;
 const common_1 = require("@nestjs/common");
 const microservices_1 = require("@nestjs/microservices");
+const user_logs_1 = require("./user-logs");
 let UserService = class UserService {
-    constructor(backEndClient) {
+    constructor(backEndClient, userLogs) {
         this.backEndClient = backEndClient;
+        this.userLogs = userLogs;
     }
     async login(createUserRequest) {
-        console.log('User_Log - ', createUserRequest);
+        this.userLogs.UserServiceLog('Recived data by API', createUserRequest);
         const token = 'generated_token';
         return { token };
     }
@@ -29,6 +31,7 @@ exports.UserService = UserService;
 exports.UserService = UserService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, common_1.Inject)('backend')),
-    __metadata("design:paramtypes", [microservices_1.ClientProxy])
+    __metadata("design:paramtypes", [microservices_1.ClientProxy,
+        user_logs_1.UserLogs])
 ], UserService);
 //# sourceMappingURL=user.service.js.map

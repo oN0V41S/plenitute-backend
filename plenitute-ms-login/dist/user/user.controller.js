@@ -14,13 +14,22 @@ const common_1 = require("@nestjs/common");
 const user_service_1 = require("./user.service");
 const user_request_dto_1 = require("./user-request.dto");
 const microservices_1 = require("@nestjs/microservices");
+const user_logs_1 = require("./user-logs");
 let UserController = class UserController {
-    constructor(userService) {
+    constructor(userService, userLogs) {
         this.userService = userService;
+        this.userLogs = userLogs;
     }
     async login(createUserRequest) {
-        const token = await this.userService.login(createUserRequest);
-        return token;
+        this.userLogs.UserControllerLog('Sending data for UserService', createUserRequest);
+        try {
+            const token = await this.userService.login(createUserRequest);
+            return token;
+        }
+        catch (e) {
+            const errorMessage = { message: "Error on loading data on Microservice" };
+            return errorMessage;
+        }
     }
 };
 exports.UserController = UserController;
@@ -32,6 +41,6 @@ __decorate([
 ], UserController.prototype, "login", null);
 exports.UserController = UserController = __decorate([
     (0, common_1.Controller)('login'),
-    __metadata("design:paramtypes", [user_service_1.UserService])
+    __metadata("design:paramtypes", [user_service_1.UserService, user_logs_1.UserLogs])
 ], UserController);
 //# sourceMappingURL=user.controller.js.map

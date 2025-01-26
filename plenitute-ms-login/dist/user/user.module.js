@@ -11,6 +11,7 @@ const common_1 = require("@nestjs/common");
 const user_controller_1 = require("./user.controller");
 const user_service_1 = require("./user.service");
 const microservices_1 = require("@nestjs/microservices");
+const user_logs_1 = require("./user-logs");
 let UserModule = class UserModule {
 };
 exports.UserModule = UserModule;
@@ -28,7 +29,7 @@ exports.UserModule = UserModule = __decorate([
             ])
         ],
         controllers: [user_controller_1.UserController],
-        providers: [user_service_1.UserService],
+        providers: [user_service_1.UserService, user_logs_1.UserLogs],
     })
 ], UserModule);
 //# sourceMappingURL=user.module.js.map
