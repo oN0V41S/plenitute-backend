@@ -1,7 +1,7 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Controller, } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserRequest } from './user-request.dto';
-import { EventPattern, MessagePattern } from '@nestjs/microservices';
+import { MessagePattern } from '@nestjs/microservices';
 
 @Controller('login')
 export class UserController {

@@ -1,19 +1,24 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { UserService } from './user.service';
+import { UserLogs } from './user-logs';
 import { CreateUserRequest } from './user-request.dto';
-import { EventPattern } from '@nestjs/microservices';
 
 @Controller('login')
 export class UserController {
-  constructor(private userService: UserService) {}
-  
+  constructor(
+    private userService: UserService, 
+    private userLogs: UserLogs
+  ) { }
+
   @Get()
-  getHello(){
-    return this.userService.getHello();
+  getHello() {
+    this.userLogs.UserModuleLog('Calling getHelloService to UserService');
+    return this.userService.getHelloService();
   }
 
   @Post()
   login(@Body() createUserRequest: CreateUserRequest) {
-    return this.userService.login(createUserRequest);
+    this.userLogs.UserModuleLog('Sending to Controller');
+    return this.userService.loginService(createUserRequest);
   }
 }

@@ -11,7 +11,6 @@ async function bootstrap() {
             port: 3000,
         },
     });
-    await app.startAllMicroservices();
     await app.init();
 }
 bootstrap();

@@ -1,6 +1,4 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { ClientProxy } from '@nestjs/microservices';
-import { CreateUserRequest } from './user/user-request.dto';
+import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
