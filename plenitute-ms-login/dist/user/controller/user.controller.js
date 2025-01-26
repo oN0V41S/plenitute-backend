@@ -8,14 +8,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var _a;
+var _a, _b, _c;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserController = void 0;
 const common_1 = require("@nestjs/common");
 const user_service_1 = require("./user.service");
 const user_request_dto_1 = require("./user-request.dto");
 const microservices_1 = require("@nestjs/microservices");
-const user_logs_1 = require("./user-logs");
+const user_logs_1 = require("../user-logs");
 let UserController = class UserController {
     constructor(userService, userLogs) {
         this.userService = userService;
@@ -37,11 +37,11 @@ exports.UserController = UserController;
 __decorate([
     (0, microservices_1.MessagePattern)('login_authenticate'),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [typeof (_a = typeof user_request_dto_1.CreateUserRequest !== "undefined" && user_request_dto_1.CreateUserRequest) === "function" ? _a : Object]),
+    __metadata("design:paramtypes", [typeof (_c = typeof user_request_dto_1.CreateUserRequest !== "undefined" && user_request_dto_1.CreateUserRequest) === "function" ? _c : Object]),
     __metadata("design:returntype", Promise)
 ], UserController.prototype, "login", null);
 exports.UserController = UserController = __decorate([
     (0, common_1.Controller)('login'),
-    __metadata("design:paramtypes", [user_service_1.UserService, user_logs_1.UserLogs])
+    __metadata("design:paramtypes", [typeof (_a = typeof user_service_1.UserService !== "undefined" && user_service_1.UserService) === "function" ? _a : Object, typeof (_b = typeof user_logs_1.UserLogs !== "undefined" && user_logs_1.UserLogs) === "function" ? _b : Object])
 ], UserController);
 //# sourceMappingURL=user.controller.js.map

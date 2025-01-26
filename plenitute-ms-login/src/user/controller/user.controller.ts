@@ -2,7 +2,7 @@ import { Controller, } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserRequest } from './user-request.dto';
 import { MessagePattern } from '@nestjs/microservices';
-import { UserLogs } from './user-logs';
+import { UserLogs } from '../user-logs';
 
 @Controller('login')
 export class UserController {
