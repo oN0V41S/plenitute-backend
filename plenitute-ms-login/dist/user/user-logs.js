@@ -4,7 +4,7 @@ exports.UserLogs = void 0;
 class UserLogs {
     UserModuleLog(message, data) {
         if (data) {
-            return console.log(`Log: ${message} || data: ${data} || Module: UserModule`);
+            return console.log(`Log: ${message} || data:`, data, ` || Module: UserModule`);
         }
         else {
             return console.log(`Log: ${message} || Module: UserModule`);
@@ -12,7 +12,7 @@ class UserLogs {
     }
     UserServiceLog(message, data) {
         if (data) {
-            return console.log(`Log: ${message} || data: ${data} || Service: UserService`);
+            return console.log(`Log: ${message} || data:`, data, ` || Service: UserService`);
         }
         else {
             return console.log(`Log: ${message} || Service: UserService`);
@@ -20,7 +20,7 @@ class UserLogs {
     }
     UserControllerLog(message, data) {
         if (data) {
-            return console.log(`Log: ${message} || data: ${data} || Controller: UserController`);
+            return console.log(`Log: ${message} || data:`, data, ` || Controller: UserController`);
         }
         else {
             return console.log(`Log: ${message} || Controller: UserController`);

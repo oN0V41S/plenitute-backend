@@ -1,7 +1,7 @@
 export class UserLogs {
     UserModuleLog(message: string, data?: any) {
         if (data!) {
-            return console.log(`Log: ${message} || data: ${data} || Module: UserModule`)
+            return console.log(`Log: ${message} || data:`, data,` || Module: UserModule`)
         }
         else {
             return console.log(`Log: ${message} || Module: UserModule`)
@@ -10,7 +10,7 @@ export class UserLogs {
 
     UserServiceLog(message: string, data?: any) {
         if (data!) {
-            return console.log(`Log: ${message} || data: ${data} || Service: UserService`)
+            return console.log(`Log: ${message} || data:`, data,` || Service: UserService`)
         }
         else {
             return console.log(`Log: ${message} || Service: UserService`)
@@ -19,7 +19,7 @@ export class UserLogs {
 
     UserControllerLog(message: string, data?: any) {
         if (data!) {
-            return console.log(`Log: ${message} || data: ${data} || Controller: UserController`)
+            return console.log(`Log: ${message} || data:`, data,` || Controller: UserController`)
         }
         else {
             return console.log(`Log: ${message} || Controller: UserController`)
