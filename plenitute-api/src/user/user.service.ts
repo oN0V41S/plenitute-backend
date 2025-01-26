@@ -15,16 +15,13 @@ export class UserService {
     return 'Welcome to /login Endpoint: you cant POST here.';
   }
 
-  async loginService(createdUserRequest: CreateUserRequest): Promise<{token: string}> {
+  async loginService(createdUserRequest: CreateUserRequest): Promise<any> {
     this.userLogs.UserModuleLog('Sending to MicroService:: ', createdUserRequest)
-    console.info( ' || Module: UserModule');
     try{
-      const response = await this.loginClient
-        .send('login_authenticate', createdUserRequest)
-        .toPromise();
+      const response = this.loginClient.send('login_authenticate', createdUserRequest);
       return response;
     }catch(e){
-      console.log(' Error: On sending message do MS-LOGIN || \n Module: UserModule ') 
+      console.log('Error: On sending message do MS-LOGIN || Module: UserModule ') 
       throw new Error("Microservice Error");
     }
   }

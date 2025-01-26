@@ -19,6 +19,14 @@ export class UserController {
   @Post()
   login(@Body() createUserRequest: CreateUserRequest) {
     this.userLogs.UserModuleLog('Sending to Controller');
-    return this.userService.loginService(createUserRequest);
+    try{
+      return this.userService.loginService(createUserRequest);
+    }catch(e){
+      const logMessage = {
+        error: e,
+        message: "Error on Comunicatte with MicroService"
+      }
+      return logMessage;
+    }
   }
 }
