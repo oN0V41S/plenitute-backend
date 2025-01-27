@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { CreateUserRequest } from './user-request.dto';
+import { UserRequest } from '../__events/userRequest.event';
 import { ClientProxy } from '@nestjs/microservices';
-import { UserLogs } from './user-logs';
+import { UserLogs } from '../user-logs';
 
 @Injectable()
 export class UserService {
@@ -15,10 +15,10 @@ export class UserService {
     return 'Welcome to /login Endpoint: you cant POST here.';
   }
 
-  async loginService(createdUserRequest: CreateUserRequest): Promise<any> {
-    this.userLogs.UserModuleLog('Sending to MicroService:: ', createdUserRequest)
+  async loginService(userRequest: UserRequest): Promise<any> {
+    this.userLogs.UserModuleLog('Sending to MicroService:: ', userRequest)
     try{
-      const response = this.loginClient.send('login_authenticate', createdUserRequest);
+      const response = this.loginClient.send('login_authenticate', userRequest);
       return response;
     }catch(e){
       console.log('Error: On sending message do MS-LOGIN || Module: UserModule ') 
