@@ -1,22 +1,19 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
 
-describe('AppController', () => {
+describe('Testing AppController || Module: AppModule ', () => {
   let appController: AppController;
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [AppController],
-      providers: [AppService],
+      providers: [],
     }).compile();
 
     appController = app.get<AppController>(AppController);
   });
 
-  describe('root', () => {
-    it('should return "Welcome to API for Plenitute."', () => {
-      expect(appController.getHello()).toBe('Welcome to API for Plenitute.');
-    });
+  it('should return "Welcome to API for Plenitute."', () => {
+    expect(appController.getHello()).toBe('Welcome to API for Plenitute.');
   });
 });

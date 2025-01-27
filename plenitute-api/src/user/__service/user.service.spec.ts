@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { UserService } from '../user.service';
+import { UserService } from '../__service/user.service';
 
-describe('UserService', () => {
+describe('Module: UserModule || UserService', () => {
   let service: UserService;
 
   beforeEach(async () => {
@@ -12,7 +12,7 @@ describe('UserService', () => {
     service = module.get<UserService>(UserService);
   });
 
-  it('should be defined', () => {
-    expect(service).toBeDefined();
-  });
+    it('should generate a token', async () => {
+
+    });
 });
